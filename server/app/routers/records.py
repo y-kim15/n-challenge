@@ -1,16 +1,13 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Cookie
 from fastapi.encoders import jsonable_encoder
+from typing import Optional
 from datetime import datetime
 from dependencies import check_cookies
-from ..solver import count_from_url
-from ..models import RecordModel
-from ..database import MongoDB, get_db
+from solver import count_from_url
+from database import MongoDB, get_db
+from database.models import RecordModel
 
-router = APIRouter(
-    prefix = "/records",
-    tages = ["records"],
-    responses = {404: {"description": "Not found"}}
-)
+router = APIRouter()
 
 @router.get(
     "/",
@@ -18,7 +15,8 @@ router = APIRouter(
     response_description = "Returns computed text count for givne url",
     response_model = RecordModel
 ) #@cache_one_hour()
-async def get_result(url: str, sort: Optional[str] = "alp", order: Optional[int] = 1, cookie: str=Cookie(None),
+async def get_result(url: str, sort: Optional[str] = "alp",
+                     order: Optional[int] = 1, cookie: str=Cookie(None),
                      db: MongoDB = Depends(get_db)):
     output_dict = db.count_from_url(url, sort, order)
     # generate record id and send with the output 
@@ -28,7 +26,7 @@ async def get_result(url: str, sort: Optional[str] = "alp", order: Optional[int]
     record.results = jsonable_encoder(output_dict)
     record.date = datetime.now()
     record.build()
-    
+    record = jsonable_encoder(record)
     created_record = await db.add_record(record)
     _ = await db.update_user(cookie, created_record.id)
     return created_record

@@ -1,18 +1,18 @@
-from fastapi import APIRouter, Depends, HTTPException
-from ..dependencies import check_cookies
-from ..models import SessionModel, RecordModel
-from ..database.mongo_db import MongoDB, get_db
-from ..env import get_env
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from fastapi.encoders import jsonable_encoder
+from typing import List
 import secrets
 
+from dependencies import check_cookies
+from database import MongoDB, get_db
+from database.models import SessionModel, RecordModel
+from config import get_settings
 
-router = APIRouter(
-    prefix = "/sessions",
-    tages = ["sessions"],
-    responses = {404: {"description": "Not found"}}
-)
 
-DOMAIN = get_env().domain
+
+router = APIRouter()
+
+DOMAIN = get_settings().domain
 
 @router.get(
     "/", 
@@ -26,17 +26,17 @@ async def get_all(request: Request, cookie: str, db: MongoDB = Depends(get_db)):
     raise HTTPException(status_code=404, detail=f"No Records with Session {id} found")
 
 
-@router.post("/", response_description="Register a new session")
+@router.get("/token", response_description="Register a new session")
 async def create_session(response: Response, db: MongoDB = Depends(get_db)):
     # for real, to use jwt to use encrypted version
     rand = secrets.token_urlsafe(16)
     
     session = SessionModel()
     session.cookie = rand
-    session.url = []
+    session.urls = []
     session.build()
-    
-    new_user = await db.add_session(session)
+    session = jsonable_encoder(session)
+    #new_user = await db.add_session(session)
     response.set_cookie(
         "Accessed",
         value=rand,
