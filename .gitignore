@@ -3,3 +3,4 @@ server/app/__pycache__
 server/app/database/__pycache__
 server/app/routers/__pycache__
 server/app/mine.env
+.vscode
