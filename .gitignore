@@ -1,6 +1,8 @@
-client/client-app/node_modules
-server/app/__pycache__
-server/app/database/__pycache__
-server/app/routers/__pycache__
-server/app/mine.env
+frontend/app/node_modules
+frontend/app/__tests__/__snapshots__
+backend/app/__pycache__
+backend/app/database/__pycache__
+backend/app/routers/__pycache__
+backend/app/mine.env
+
 .vscode
