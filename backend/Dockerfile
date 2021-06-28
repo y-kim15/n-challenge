@@ -1,11 +1,13 @@
-FROM python:3.8
-
-RUN mkdir /app
+FROM continuumio/miniconda3
 WORKDIR /app
 
-RUN apt update
+# Create the environment:
+COPY environment.yml .
+RUN conda env create -f environment.yml
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+# Make RUN commands use the new environment:
+SHELL ["conda", "run", "-n", "newenv", "/bin/bash", "-c"]
 
-COPY . .
+# The code to run when container is started:
+COPY app/main.py .
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "myenv", "python", "app/main.py"]
