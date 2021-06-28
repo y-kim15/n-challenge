@@ -3,7 +3,6 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from typing import List
 import secrets
-from fastapi.logger import logger
 
 from .dependencies import check_cookies
 from ..database import MongoDB, get_db
@@ -14,7 +13,7 @@ from ..config import get_settings
 
 router = APIRouter()
 
-DOMAIN = get_settings().domain
+#DOMAIN = get_settings().domain
 
 
 @router.get(
@@ -31,7 +30,7 @@ async def get_all(request: Request, cookie: str, db: MongoDB = Depends(get_db)):
 
 @router.get("/token", response_description="Register a new session")
 async def create_session(db: MongoDB = Depends(get_db)):
-    # for real, to use jwt to use encrypted version
+    # this can be extended to use jwt to use encrypted version
     rand = secrets.token_urlsafe(16)
     
     session = SessionModel()
@@ -39,7 +38,6 @@ async def create_session(db: MongoDB = Depends(get_db)):
     session.urls = []
     session.build()
     session = jsonable_encoder(session)
-    logger.info("session creeated")
     #new_user = await db.add_session(session)
     response = JSONResponse(200,{"message": "new session created"})
     response.set_cookie(
@@ -50,5 +48,4 @@ async def create_session(db: MongoDB = Depends(get_db)):
         max_age=36000,
         expires=36000
     )
-    logger.info("return response with cookie")
     return response

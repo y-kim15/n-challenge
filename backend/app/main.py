@@ -68,6 +68,7 @@ async def startup():
 
 @app.on_event("shutdown")
 async def shutdown():
+    pass
     #await db.close()
 
 @app.get("/")

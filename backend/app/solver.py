@@ -34,7 +34,7 @@ def get_counts(text):
 
 def sort_result(out, sort_type, des):
     """ sort by counts and lesicographical order, in ascending and descending order"""
-    if sort_type == 'counts':
+    if not sort_type:
         if des:
             return sorted(out.items(), key=operator.itemgetter(1),reverse=True)
         else:

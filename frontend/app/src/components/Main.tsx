@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     },
     body: {
         color: 'black',
-        //marginTop: theme.spacing(2),
         padding: theme.spacing(2, 6, 2, 6),
     },
     msg: {
@@ -38,11 +37,6 @@ const useStyles = makeStyles((theme) => ({
 const Main: React.FC = () => {
     const { token, previousRecords } = useContext(AuthContext) as ContextType;
     const [records, setRecords] = useState<IRecord[]>(previousRecords);
-
-    // useEffect(() => {
-    //     //token === '' && login();
-    //     setRecords(previousRecords);
-    // });
 
     const handleNewSearch = (result: IRecord) => {
         setRecords({

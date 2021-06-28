@@ -8,7 +8,6 @@ import { search } from '../service/Api';
 const useStyles = makeStyles((theme) => ({
     page: {
         width: '100%',
-        //margin: theme.spacing(2, 6, 2, 6),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -38,10 +37,8 @@ const SearchTab = (props: SearchProps) => {
             props.handleNewSearch(data);
         } catch (err) {
             if (err instanceof Error) {
-                // handle errors thrown from frontend
                 setError(err.message);
             } else {
-                // handle errors thrown from backend
                 setError(err);
             }
         }
@@ -77,5 +74,4 @@ const SearchTab = (props: SearchProps) => {
         </Paper>
     );
 };
-//elevation={3}>
 export default SearchTab;

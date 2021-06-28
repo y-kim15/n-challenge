@@ -8,6 +8,7 @@ search_url = {
     "url": BASE_URL+"/static/rand.html"
 }
 
+""" tests session is created with token passed """
 def test_create_session():
     res = client.post(
         "/sessions/token" 

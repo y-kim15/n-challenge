@@ -14,17 +14,17 @@ router = APIRouter()
 class URLParams(BaseModel):
     url: str
     sort: Optional[str] = "lex"
-    order: Optional[int] = 1
+    order: Optional[int] = 0
     
 @router.get(
     "/",
     dependencies = [Depends(check_cookies)],
-    response_description = "Returns computed text count for givne url",
+    response_description = "Returns computed text count for a given url",
     response_model = RecordModel
 ) #@cache_one_hour() #async
 def get_result(url: str = Query(None),
-                     sort: Optional[str] = "alp",
-                     order: Optional[int] = 1, cookie: str=Cookie(None),
+                     sort: Optional[str] = "lex",
+                     order: Optional[int] = 0, cookie: str=Cookie(None),
                      db: MongoDB = Depends(get_db)):
     
     output_dict = count_from_url(url, sort, order)
