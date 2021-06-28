@@ -21,7 +21,7 @@ services:
       - ./.docker/.ipython:/root/.ipython:cached
     environment:
       PYTHONPATH: .
-     #DATABASE_URL: 'mongodb+srv://mongo_user:mongo_password@cluster0.rvwkt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+     #DATABASE_URL: 'URL here'
         #depends_on:
         #  - "mongo"
 

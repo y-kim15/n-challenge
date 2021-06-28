@@ -13,7 +13,7 @@ router = APIRouter()
 
 class URLParams(BaseModel):
     url: str
-    sort: Optional[str] = "lex"
+    sort: Optional[int] = 1
     order: Optional[int] = 0
     
 @router.get(
@@ -23,7 +23,7 @@ class URLParams(BaseModel):
     response_model = RecordModel
 ) #@cache_one_hour() #async
 def get_result(url: str = Query(None),
-                     sort: Optional[str] = "lex",
+                     sort: Optional[int] = 1,
                      order: Optional[int] = 0, cookie: str=Cookie(None),
                      db: MongoDB = Depends(get_db)):
     
@@ -46,7 +46,7 @@ def get_result(url: str = Query(None),
     response_description = "Get a record by id",
     response_model = RecordModel
 ) #@cache_one_hour()
-async def read_record(record_id:str,  sort: Optional[str] = "alp",
+async def read_record(record_id:str,  sort: Optional[int] = 1,
                      order: Optional[int] = 0, cookie: str=Cookie(None), db: MongoDB = Depends(get_db)):
     if (record := await db.get_record(record_id)) is not None:
         record.results = sort_result(record.results, sort, order)
