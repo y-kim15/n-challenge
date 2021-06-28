@@ -1,8 +1,10 @@
 frontend/app/node_modules
-frontend/app/__tests__/__snapshots__
+frontend/app/src/__tests__/__snapshots__
 backend/app/__pycache__
 backend/app/database/__pycache__
 backend/app/routers/__pycache__
+backend/app/tests/__pycache__
+backend/app/.pytest_cache
 backend/app/mine.env
 
 .vscode
