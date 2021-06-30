@@ -2,22 +2,22 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi.staticfiles import StaticFiles
-from fastapi_redis_cache import FastApiRedisCache, cache
+#from fastapi_redis_cache import FastApiRedisCache, cache
 import uvicorn
 import logging
 
-from .routers import records, sessions
-from .database import db
-from .config import get_settings
+from routers import records, sessions
+from database import db
+from config import get_settings
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-origins = [
-    "http://localhost:*",
-    "http://localhost:8000",
-    "http://localhost:3000",
-]
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+# origins = [
+#     "http://localhost:*",
+#     "http://localhost:8000",
+#     "http://localhost:3000",
+# ]
 
 app.add_middleware(
     CORSMiddleware,
@@ -43,14 +43,14 @@ app.add_middleware(
 
 app.include_router(
     records.router,
-    prefix = "/records",
+    prefix = "/api/records",
     tags = ["records"],
     responses = {404: {"description": "Not found"}},
 )
     
 app.include_router(
     sessions.router,
-    prefix = "/sessions",
+    prefix = "/api/sessions",
     tags = ["sessions"],
     responses = {404: {"description": "Not found"}},
 )

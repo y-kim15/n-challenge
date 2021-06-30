@@ -5,9 +5,9 @@ from typing import List
 import secrets
 
 from .dependencies import check_cookies
-from ..database import MongoDB, get_db
-from ..database.models import SessionModel, RecordModel
-from ..config import get_settings
+from database import MongoDB, get_db
+from database.models import SessionModel, RecordModel
+from config import get_settings
 
 
 
@@ -39,13 +39,14 @@ async def create_session(db: MongoDB = Depends(get_db)):
     session.build()
     session = jsonable_encoder(session)
     #new_user = await db.add_session(session)
-    response = JSONResponse(200,{"message": "new session created"})
+    response = JSONResponse(status_code=200,content={"message": "new session created"})
     response.set_cookie(
         "cookie",
         value=rand,
         #domain=DOMAIN,
         httponly=True,
         max_age=36000,
-        expires=36000
+        expires=36000,
+        secure=True,
     )
     return response

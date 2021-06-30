@@ -3,9 +3,9 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8888',
+    baseURL: '/api',
 });
-
+// http://0.0.0.0:8888
 const cookies = new Cookies();
 
 export const launch = async () => {
@@ -39,10 +39,10 @@ export const launch = async () => {
     );
     //return output;
 };
-
 export const search = async (url: string) => {
+    console.log("output is " + url)
     return instance
-        .get<IRecord>('/records/', { params: { url: url }, withCredentials: true })
+        .get<IRecord>('/records/', { params: {enurl: url}, withCredentials: true })
         .then(
             (response) => {
                 return response.data as IRecord;

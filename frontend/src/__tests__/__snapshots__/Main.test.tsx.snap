@@ -1,0 +1,381 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main snapshots should display new landing with no previous searches for new user 1`] = `
+<main
+  className="MuiContainer-root MuiContainer-maxWidthLg"
+>
+  <div
+    className="makeStyles-app-1"
+  >
+    <header
+      className="makeStyles-header-2"
+    >
+      <h1>
+        Simple Text Counter App
+      </h1>
+    </header>
+    <div
+      className="makeStyles-body-3"
+    >
+      <div
+        className="MuiPaper-root makeStyles-padding-6 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          className="makeStyles-page-5"
+        >
+          <h3>
+            Type URL here
+          </h3>
+          <div
+            className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-8 MuiGrid-align-items-xs-flex-start"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true MuiGrid-grid-sm-true MuiGrid-grid-md-true"
+            >
+              <div
+                className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+              >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
+                  data-shrink={false}
+                  htmlFor="url"
+                  id="url-label"
+                >
+                  URL
+                  <span
+                    aria-hidden={true}
+                    className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                  >
+                     
+                    *
+                  </span>
+                </label>
+                <div
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+                  onClick={[Function]}
+                >
+                  <input
+                    aria-invalid={false}
+                    autoFocus={true}
+                    className="MuiInputBase-input MuiOutlinedInput-input"
+                    disabled={false}
+                    id="url"
+                    onAnimationStart={[Function]}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={true}
+                    type="url"
+                    value=""
+                  />
+                  <fieldset
+                    aria-hidden={true}
+                    className="PrivateNotchedOutline-root-9 MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      className="PrivateNotchedOutline-legendLabelled-11"
+                    >
+                      <span>
+                        URL
+                         *
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+              <button
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-7 MuiButton-containedPrimary"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  Search
+                </span>
+                <span
+                  className="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p
+        className="makeStyles-msg-4"
+      >
+        Any previous requests will be displayed here!
+      </p>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Main snapshots should have previous records displayed if available on landing 1`] = `
+<main
+  className="MuiContainer-root MuiContainer-maxWidthLg"
+>
+  <div
+    className="makeStyles-app-1"
+  >
+    <header
+      className="makeStyles-header-2"
+    >
+      <h1>
+        Simple Text Counter App
+      </h1>
+    </header>
+    <div
+      className="makeStyles-body-3"
+    >
+      <div
+        className="MuiPaper-root makeStyles-padding-6 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          className="makeStyles-page-5"
+        >
+          <h3>
+            Type URL here
+          </h3>
+          <div
+            className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-8 MuiGrid-align-items-xs-flex-start"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true MuiGrid-grid-sm-true MuiGrid-grid-md-true"
+            >
+              <div
+                className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+              >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
+                  data-shrink={false}
+                  htmlFor="url"
+                  id="url-label"
+                >
+                  URL
+                  <span
+                    aria-hidden={true}
+                    className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                  >
+                     
+                    *
+                  </span>
+                </label>
+                <div
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+                  onClick={[Function]}
+                >
+                  <input
+                    aria-invalid={false}
+                    autoFocus={true}
+                    className="MuiInputBase-input MuiOutlinedInput-input"
+                    disabled={false}
+                    id="url"
+                    onAnimationStart={[Function]}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={true}
+                    type="url"
+                    value=""
+                  />
+                  <fieldset
+                    aria-hidden={true}
+                    className="PrivateNotchedOutline-root-9 MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      className="PrivateNotchedOutline-legendLabelled-11"
+                    >
+                      <span>
+                        URL
+                         *
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+              <button
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-7 MuiButton-containedPrimary"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  Search
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="previous"
+      >
+        <h3>
+          Your Previous Searches
+        </h3>
+        <div>
+          <h4>
+            Record here
+          </h4>
+          <div
+            className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <table
+              aria-label="collapsible table"
+              className="MuiTable-root"
+              role={null}
+            >
+              <thead
+                className="MuiTableHead-root"
+                role={null}
+              >
+                <tr
+                  className="MuiTableRow-root MuiTableRow-head"
+                  role={null}
+                >
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root MuiTableCell-head"
+                    scope="col"
+                  />
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root MuiTableCell-head"
+                    scope="col"
+                  >
+                    Submitted URL
+                  </th>
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                    scope="col"
+                  >
+                    Date Created
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className="MuiTableBody-root"
+                role={null}
+              >
+                <div
+                  className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <tbody
+                    className="MuiTableBody-root"
+                    role={null}
+                  >
+                    <tr
+                      className="MuiTableRow-root makeStyles-root-13"
+                      role={null}
+                    >
+                      <td
+                        aria-sort={null}
+                        className="MuiTableCell-root MuiTableCell-body"
+                      >
+                        <button
+                          aria-label="expand row"
+                          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="MuiIconButton-label"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              className="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </td>
+                      <th
+                        aria-sort={null}
+                        className="MuiTableCell-root MuiTableCell-body"
+                        role="cell"
+                        scope="row"
+                      >
+                        dummy_url
+                      </th>
+                      <td
+                        aria-sort={null}
+                        className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+                      >
+                        28/06/2021
+                      </td>
+                    </tr>
+                    <tr
+                      className="MuiTableRow-root"
+                      role={null}
+                    >
+                      <td
+                        aria-sort={null}
+                        className="MuiTableCell-root MuiTableCell-body"
+                        colSpan={6}
+                        style={
+                          Object {
+                            "paddingBottom": 0,
+                            "paddingTop": 0,
+                          }
+                        }
+                      />
+                    </tr>
+                  </tbody>
+                </div>
+              </tbody>
+            </table>
+          </div>
+        </div>
+         
+      </div>
+    </div>
+  </div>
+</main>
+`;

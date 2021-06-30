@@ -3,7 +3,7 @@ import os
 from typing import List
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 from .models import RecordModel, SessionModel
-from ..config import get_settings
+from config import get_settings
 
 
 env = get_settings()
